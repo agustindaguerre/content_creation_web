@@ -12,6 +12,10 @@ class UploadContentComponent extends React.Component {
     this.state = {
       content: {
         type: 'photo',
+        hashtags: [],
+        tagged_users: [],
+        like_count: 0,
+        comment_count: 0,
       },
     }
   }
@@ -31,6 +35,8 @@ class UploadContentComponent extends React.Component {
     e.preventDefault();
     const content = this.state.content;
     content.hashtags = content.hashtags.split(',');
+    content.tagged_users = content.tagged_users.split(',');
+    content.creation_date = new Date().toISOString();
     this.props.handleSubmit(this.state.content)
   }
 
@@ -84,9 +90,27 @@ class UploadContentComponent extends React.Component {
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="hashtags" sm={2}>Hashtags</Label>
+              <Label for="like_count" sm={2}>Likes</Label>
+              <Col sm={10}>
+                <Input type="number" min="0" onChange={this.handleOnChange} name="like_count" id="like_count" value={this.state.content.like_count} />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label for="comment_count" sm={2}>Comments</Label>
+              <Col sm={10}>
+                <Input type="number" min="0" onChange={this.handleOnChange} name="comment_count" id="comment_count" value={this.state.content.comment_count} />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label for="hashtags" sm={2}>Hashtags *</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="hashtags" id="hashtags" placeholder="" />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label for="tagged_users" sm={2}>Tagged users *</Label>
+              <Col sm={10}>
+                <Input onChange={this.handleOnChange} name="tagged_users" id="tagged_users" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
@@ -102,6 +126,7 @@ class UploadContentComponent extends React.Component {
             </FormGroup>
           </Form>
         </div>
+        <div>* comma separated</div>
         <h5>------------------------------------------------</h5>
           <button style={{ margin: '10px' }} onClick={e => {
             e.preventDefault();

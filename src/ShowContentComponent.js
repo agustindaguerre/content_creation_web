@@ -55,7 +55,24 @@ class ShowContentComponent extends React.Component {
                   })}
                 </div>
                 <div>
+                  <div>Tagged Users</div>
+                  {content.tagged_users.map(tag => {
+                    return(
+                      <a href="#" style={{ marginLeft: '5px' }}>{` ${tag.trim()}`}</a>
+                    )
+                  })}
+                </div>
+                <div>
                   {content.description}
+                </div>
+                <div>
+                  Created: {content.creation_date}
+                </div>
+                <div>
+                  {content.like_count} likes
+                </div>
+                <div>
+                  {content.comment_count} comments
                 </div>
                 <div>
                   LAT: {content.geo_lat}
