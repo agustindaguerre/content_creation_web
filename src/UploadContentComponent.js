@@ -49,10 +49,10 @@ class UploadContentComponent extends React.Component {
         <div>
           <Form onSubmit={this.handleSubmit}>
             <FormGroup row>
-              <legend className="col-form-label col-sm-2">Type</legend>
               <Col sm={10}>
                 <FormGroup check>
-                  <Label check>
+                <Label className="group-title" for="type" sm={2} style={{ display: 'block' }}>Type</Label>
+                <Label check>
                     <Input
                       type="radio"
                       name="type"
@@ -72,49 +72,49 @@ class UploadContentComponent extends React.Component {
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="content_url" sm={2}>Content Url</Label>
+              <Label className="group-title" for="content_url" sm={2}>Content Url</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="content_url" id="content_url" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="geo_lat" sm={2}>Geo Lat</Label>
+              <Label className="group-title" for="geo_lat" sm={2}>Geo Lat</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="geo_lat" id="geo_lat" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="geo_lng" sm={2}>Geo Lng</Label>
+              <Label className="group-title" for="geo_lng" sm={2}>Geo Lng</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="geo_lng" id="geo_lng" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="like_count" sm={2}>Likes</Label>
+              <Label className="group-title" for="like_count" sm={2}>Likes</Label>
               <Col sm={10}>
                 <Input type="number" min="0" onChange={this.handleOnChange} name="like_count" id="like_count" value={this.state.content.like_count} />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="comment_count" sm={2}>Comments</Label>
+              <Label className="group-title" for="comment_count" sm={2}>Comments</Label>
               <Col sm={10}>
                 <Input type="number" min="0" onChange={this.handleOnChange} name="comment_count" id="comment_count" value={this.state.content.comment_count} />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="hashtags" sm={2}>Hashtags *</Label>
+              <Label className="group-title" for="hashtags" sm={2}>Hashtags *</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="hashtags" id="hashtags" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="tagged_users" sm={2}>Tagged users *</Label>
+              <Label className="group-title" for="tagged_users" sm={2}>Tagged users *</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} name="tagged_users" id="tagged_users" placeholder="" />
               </Col>
             </FormGroup>
             <FormGroup row>
-              <Label for="description" sm={2}>Description</Label>
+              <Label className="group-title" for="description" sm={2}>Description</Label>
               <Col sm={10}>
                 <Input onChange={this.handleOnChange} type="textarea" name="description" placeholder="Description..." />
               </Col>
